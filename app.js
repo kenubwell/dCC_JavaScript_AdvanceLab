@@ -138,7 +138,7 @@ function problemOne(){
 }
 
 let vegetarianFood = problemOne();
-console.log('Vegetarian Foods: ', vegetarianFood);
+console.log('Dishes with cuisine type of "Vegetarian": ', vegetarianFood);
 
 //2. Create a function that will return all dishes with the cuisine type of "Italian" and a serving size greater than 5.
 //Filter
@@ -155,7 +155,7 @@ function problemTwo(){
 }
 
 let italianForMoreThanFive = problemTwo();
-console.log('Italian Food for More than Five: ', italianForMoreThanFive);
+console.log('Dishes where cuisine is "Italian" and serving count is more than "Five": ', italianForMoreThanFive);
 
 //3. Create a function that will return only dishes whose serving id number matches their serving count.
 //Filter
@@ -172,7 +172,8 @@ function problemThree(){
 }
 
 let dishesIdEqualServingCount = problemThree();
-console.log('Dishes where its IDs match Serving Count: ', dishesIdEqualServingCount);
+console.log('Returns a list of dishes where its ID match its Serving Count: ', dishesIdEqualServingCount);
+
 
 //4. Create a function that will return only dishes whose serving count is even.
 //Filter
@@ -189,7 +190,7 @@ function problemFour(){
 }
 
 let servingCountIsEven = problemFour();
-console.log('Dishes where Serving Count is an Even Number: ', servingCountIsEven);
+console.log('Returns dishes where its Serving Count is an Even Number: ', servingCountIsEven);
 
 //5. Create a function that will return dishes whose ingredients array is "tomato" and "cheese".
 //Filter
@@ -206,7 +207,7 @@ function problemFive(){
 }
 
 let ingredentTomatoCheese = problemFive();
-console.log('Dishes with tomato and cheese as ingredients: ', ingredentTomatoCheese);
+console.log('Returns the list of dishes with tomato and cheese as ingredients: ', ingredentTomatoCheese);
 
 //6a. Create a function that will return an array of only the names of the cuisine types. Ie ['Italian', 'Mexican', ...]
 //Map
@@ -219,7 +220,7 @@ function problemSixA(){
 }
 
 let listOfCusines = problemSixA();
-console.log('The names of the Cuisine Types for all Dishes: ', listOfCusines);
+console.log('This is an array that displays the names of the cuisine types (i.e. Italian, Mexican, etc.): ', listOfCusines);
 
 // BONUS: (come back to this after finishing all)
 //6b. Use the filter method to eliminate duplicates, leaving only distinct values in the array
@@ -227,8 +228,32 @@ console.log('The names of the Cuisine Types for all Dishes: ', listOfCusines);
 //7. Create a function that will append the cuisine type to the start of the dish's name. Ie, "Italian Pizza"
 //Map 
 
-//8. Create a function that will append the cuisine type to the start of the dish's name. Then, return only the Vegetarian dish objects. So this function should return objects 11-13 with their names changed to "Vegetarian Lasagna", "Vegetarian Falafel", "Vegetarian Chili"
+function problemSeven(){
+    let cuisineAndDishName = dishes.map(function(element){
+        return element.cuisine + " " + element.name;
+    })
+    return cuisineAndDishName;
+}
+
+let disheNameIncludesCuisine = problemSeven();
+console.log('This displays an array with Cuisine Type appended to Dish Name (i.e. Italian Pizza): ', disheNameIncludesCuisine);
+
+//8. Create a function that will append the cuisine type to the start of the dish's name. 
+//Then, return only the Vegetarian dish objects. So this function should return objects 11-13 with their names changed to "Vegetarian Lasagna", "Vegetarian Falafel", "Vegetarian Chili"
 //Map, Filter
+
+function problemEight(){
+    let vegeWithCuisineAndName = dishes.map(function(element){
+        element.name = element.cuisine + " " + element.name;
+        return element;
+    }).filter(function(element) {
+        return element.cuisine === "Vegetarian";
+    })
+    return vegeWithCuisineAndName;
+}
+
+let vegeDishesCuisineAndName = problemEight();
+console.log('This array displays the dish objects (11-13) with cuisine appended with dish name and only those that are vegetarian cuisines: ', vegeDishesCuisineAndName);
 
 
 //BONUS
