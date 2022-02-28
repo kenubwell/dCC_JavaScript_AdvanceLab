@@ -143,17 +143,84 @@ console.log('Vegetarian Foods: ', vegetarianFood);
 //2. Create a function that will return all dishes with the cuisine type of "Italian" and a serving size greater than 5.
 //Filter
 
+function problemTwo(){
+    let results = dishes.filter(function(element){
+        if(element.cuisine === "Italian" && element.servings > 5){
+            return true;
+        }
+        else{
+            return false;
+        }})
+    return results;
+}
+
+let italianForMoreThanFive = problemTwo();
+console.log('Italian Food for More than Five: ', italianForMoreThanFive);
+
 //3. Create a function that will return only dishes whose serving id number matches their serving count.
 //Filter
+
+function problemThree(){
+    let results = dishes.filter(function(element){
+        if(element.id === element.servings){
+            return true;
+        }
+        else{
+            return false;
+        }})
+    return results;
+}
+
+let dishesIdEqualServingCount = problemThree();
+console.log('Dishes where its IDs match Serving Count: ', dishesIdEqualServingCount);
 
 //4. Create a function that will return only dishes whose serving count is even.
 //Filter
 
+function problemFour(){
+    let results = dishes.filter(function(element){
+        if(element.servings % 2 == 0){
+            return true;
+        }
+        else{
+            return false;
+        }})
+    return results;
+}
+
+let servingCountIsEven = problemFour();
+console.log('Dishes where Serving Count is an Even Number: ', servingCountIsEven);
+
 //5. Create a function that will return dishes whose ingredients array is "tomato" and "cheese".
 //Filter
 
+function problemFive(){
+    let results = dishes.filter(function(element){
+        if(element.ingredients[0] === "tomato" && element.ingredients[1] === "cheese"){
+            return true;
+        }
+        else{
+            return false;
+        }})
+    return results;
+}
+
+let ingredentTomatoCheese = problemFive();
+console.log('Dishes with tomato and cheese as ingredients: ', ingredentTomatoCheese);
+
 //6a. Create a function that will return an array of only the names of the cuisine types. Ie ['Italian', 'Mexican', ...]
 //Map
+
+function problemSixA(){
+    let namesOfCusines = dishes.map(function(element){
+        return element.cuisine;
+    })
+    return namesOfCusines;
+}
+
+let listOfCusines = problemSixA();
+console.log('The names of the Cuisine Types for all Dishes: ', listOfCusines);
+
 // BONUS: (come back to this after finishing all)
 //6b. Use the filter method to eliminate duplicates, leaving only distinct values in the array
 
