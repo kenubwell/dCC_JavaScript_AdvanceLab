@@ -261,8 +261,32 @@ console.log('This array displays the dish objects (11-13) with cuisine appended 
 //Hint: You do not want to check the array's indexes to find out what the array INCLUDES.
 //Filter
 
+function problemNine(){
+    let results = dishes.filter(function(element){
+        if(element.ingredients.includes("chickpea")){
+            return true;
+        }
+        else{
+            return false;
+        }})
+    return results;
+}
+
+let dishesWithChickpea = problemNine();
+console.log('Returns a list of dishes where its ingredients includes "chickpea": ', dishesWithChickpea);
+
 //10. Create a function that will return the total serving count of all dishes.
 //Must use Reduce, not a loop.
+
+function problemTen(){
+    let results = dishes.reduce(function(sum, element) {
+        return sum + element.servings;
+        }, 0);
+    return results;
+}
+
+
+console.log('The sum of all servings is: ', results);
 
 //11. Create a function that will return an array of any objects that do not share a cuisine type with any other objects.
 
