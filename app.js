@@ -285,8 +285,8 @@ function problemTen(){
     return results;
 }
 
-
-console.log('The sum of all servings is: ', results);
+let sumOfAllServings = problemTen();
+console.log('The sum of all servings is:', sumOfAllServings);
 
 //11. Create a function that will return an array of any objects that do not share a cuisine type with any other objects.
 
